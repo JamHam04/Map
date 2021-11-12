@@ -22,6 +22,17 @@
 	    Cblock.bindPopup("<b>C Block</b><br>T-Level Digital").openPopup();
 	        var Mblock = L.marker([51.12966, -2.73257]).addTo(mymap);
 	    Mblock.bindPopup("<b>M Block</b><br>").openPopup();
+	    
+	    var baseMaps = {
+           "OSM": osm,
+           "Google": google
+        };
+	var overlayMaps = {
+	    "Surface": surface,
+            "College": college
+        };
+        L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+	    mymap.addControl(new L.Control.Fullscreen());
     </script>
   </body>    
 </html>
